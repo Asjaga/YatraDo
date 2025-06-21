@@ -1,0 +1,18 @@
+<% layout('../layout/boilerplate.ejs') -%>
+<div class="container margin ">
+    <div class="listings">
+        <h2 >My Listings</h2>
+        <div style="width: 90vw;" class="row d-flex align-items-center cards justify-content-center  row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-1">
+            <% for(listing of listings){ %>
+               <div class="listing-card col" style="width: 20rem;">
+                    <a href="/listing/<%= listing._id%>/view"><img src="<%=listing.image.url%>" class="card-img-top" alt="listing image"> </a>
+                    <div class="card-body">
+                    <div class="title"><h5 class="card-title"> <a id="titleanchor" href="/listing/<%= listing._id%>/view"><%=listing.title%></a></h5></div>
+                        <p class="card-text">₹ <%= listing.price.toLocaleString("en-IN") %>/night</p>
+                        <a href="/listing/<%= listing._id%>/view" class="btn btn-primary">View More</a>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+    </div>
+</div>

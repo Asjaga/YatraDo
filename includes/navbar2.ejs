@@ -1,0 +1,77 @@
+<nav class="navbar fixed-top navbar-expand-lg bg-light" data-bs-theme="light">
+  <div class="container-fluid">
+
+    <div class="navbar-brand-center">
+        <a class="ma-auto" id="nav-center"  href="/"><i class="fa-solid fa-compass-drafting"></i> YatraDo</a>
+    </div>
+    
+    <!-- <button class="navbar-toggler ms-auto" data-bs-toggle="collapse" href="#collapseExample" aria-label="Toggle navigation" type="button" role="button" aria-expanded="false" aria-controls="collapseExample">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-navbar"  aria-label="Toggle navigation" role="button" aria-expanded="false" aria-controls="collapse-navbar">
+    <i class="fa-solid fa-bars"></i>
+    </button>
+
+
+
+    <div class=" collapse w-100 navbar-collapse justify-content-between" id="collapse-navbar">
+      <div  class="navbar-nav  leftsidenav me-auto">
+        <a class="navbar-brand" href="/"><i class="fa-solid fa-compass-drafting"></i> YatraDo</a>
+        <a class="nav-link nav-btn" href="/listings">Explore</a>
+      </div>
+
+        <form class="d-flex justify-content-center form-control search-box " method="get" action="/listings/search" style="width: 400px;" role="search">
+          <input class=" me-2" name="q" style="font-size: 1.2rem;" placeholder="Search listings..." aria-label="Search"/>
+          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      
+      <div class="navbar-nav rightsidenav ms-auto ">
+        <% if(!currUser){ %>
+          <div class="nav-btn">
+          <a class="nav-link" href="/login">Host</a>
+          </div>
+          <div class="nav-btn">
+          <a class="nav-link" href="/login/customer"><b>Login</b></a>
+          </div>
+          <div class="nav-btn">
+          <a class="nav-link" href="/signup/customer"><b>SignUp</b></a> 
+          </div>
+        <% } %>  
+        <% if(currUser){ %>  
+          <div class="nav-btn">
+          <a class="nav-link" 
+              href="mailto:contact.asjaga@gmail.com?subject=Booking%20Query&body=Hello%2C%20I%20have%20a%20question%20about%20my%20booking.">
+              Contact Us
+            </a>
+
+          </div>
+          <div class="nav-btn">
+          <a class="nav-link" style="cursor: pointer;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><b> <i class="fa-solid fa-user"></i> Profile</b></a>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
+        <% if(currUser) {%>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Hello, <%=currUser.name%>!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="list-group">
+                  <% if(currUser.role === "owner") {%>
+                    <li class="list-group-item"><a class="togglelist" href="/mylistings">My Listings</a></li>
+                    <li class="list-group-item"><a class="togglelist" href="/hostbooking">My Bookings</a></li>
+                    <li class="list-group-item"><a class="togglelist" href="/listing/new">Create Listing</a></li>
+                    <% } else{ %>
+                      <li class="list-group-item"><a class="togglelist" href="/mybooking">My Bookings</a></li>
+                      <% } %>
+                      <li class="list-group-item"><a class="togglelist" href="/profile">Edit Profile</a></li>
+                      <li class="list-group-item"><a class="togglelist" href="/logout">Logout</a></li>
+                </ul>
+              </div>
+            </div>
+          <% } %>

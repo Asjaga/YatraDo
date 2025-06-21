@@ -1,0 +1,83 @@
+<% layout('../layout/boilerplate.ejs') -%>
+<div class=" mt-2 container">
+    <div class="listing-card-bookview viewform hostform" >
+        <div class="viewtitle"> <h5 class="text-center mt-3 card-title"><b><%= booking.listing.title %></b></h5></div>
+                    <div class="image-wrapper position-relative">
+                        <img src="<%= booking.listing.image.url %>" class="card-img-bookview viewimg" alt="listing image">
+                        <div class="booking-overlay">Booking is <%= booking.status  %></div>
+                    </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item viewsize"><b>Customer Name</b> : <%= user.name%></li>
+            <li class="list-group-item viewsize"><b>Date</b> : <%= booking.date %> (<%= booking.totalDays %> Days)</li>
+            <li class="list-group-item viewsize"><b>Total Room</b>: &nbsp;<%= booking.totalRoom %></li>
+             <% if(booking.status === "Processing") {%>
+                    <li class="list-group-item viewsize"><b>Booking Status </b> : <span style="color: orange;">Under Processing </li>
+            <% } else if(booking.status === "Cancelled"){%>
+                    <li class="list-group-item viewsize"><b>Booking Status </b> : <span style="color: red;">Cancelled </li>
+            <%}else{%>
+                    <li class="list-group-item viewsize"><b>Booking Status </b> : <span style="color: green;">Confirmed ✓</li>
+            <% } %>    
+            <li class="list-group-item viewsize"><b>Total Amount </b> : ₹<%= booking.totalAmount.toLocaleString("en-IN")  %></li>
+        </ul>
+        <div class="card-body viewbtn">
+        <% if(booking.status != "Confirmed") {%>
+        <form method="post" action="/hostbooking/<%=booking._id%>?_method=put">
+            <button class=" btns hostbtn clbtn btn-danger">Cancel Booking</button>
+        </form>
+                <form method="post" action="/hostbooking/<%=booking._id%>?_method=PATCH">
+            <button style="background-color: green;" class=" btns clbtn btn-success">Confirm Booking</button>
+        </form>
+        <% } %>
+        </div>
+    </div>
+</div>
+
+<% if(booking.status == "Confirmed") {%>
+    <style>
+        .hostform{
+            height: 74vh;
+        }
+    @media (max-width: 991.98px) {
+        .hostform{
+            height: 67vh !important;
+        }
+    }
+    </style>
+<% } %>
+
+
+<script>
+  function confirmCancel() {
+    return confirm("Are you sure you want to cancel this booking?");
+  }
+</script>
+
+<style>
+
+    .image-wrapper {
+    position: relative;
+}
+
+.clbtn{
+    background-color: black;
+    color: white;
+    border-radius: 0.4rem;
+    font-size: 0.8rem;
+    width: 7rem;
+}
+
+.booking-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(40, 167, 69, 0.85); /* Bootstrap green */
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+</style>
+

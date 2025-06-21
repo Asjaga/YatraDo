@@ -1,0 +1,57 @@
+<% layout('../layout/boilerplate.ejs') -%>
+
+<% if (path === "/") { %>
+  <div class="filters mt-5">
+    <div class="icons">
+      <a href="/listings/filter/adventure">
+        <div class="filter"><i class="fa-solid fa-person-hiking"></i> Adventure</div>
+      </a>
+      <a href="/listings/filter/hill-station">
+        <div class="filter"><i class="fa-solid fa-mountain"></i> Hill Station</div>
+      </a>
+      <a href="/listings/filter/budget">
+        <div class="filter"><i class="fa-solid fa-wallet"></i> Budget</div>
+      </a>
+      <a href="/listings/filter/beach">
+        <div class="filter"><i class="fa-solid fa-umbrella-beach"></i> Beach</div>
+      </a>
+      <a href="/listings/filter/religious">
+        <div class="filter"><i class="fa-solid fa-place-of-worship"></i> Religious</div>
+      </a>
+      <a href="/listings/filter/luxury">
+        <div class="filter"><i class="fa-solid fa-gem"></i> Luxury</div>
+      </a>
+    </div>
+
+    <div class="filter-option ms-auto">
+      <i class="fa-solid fa-filter"></i> Filter
+    </div>
+  </div>
+<% } else { %>
+  <div class="margin"></div>
+<% } %>
+
+<div class="container">
+  <div class="listings">
+    <h2>All Listings</h2>
+
+    <div class="row d-flex align-items-center cards justify-content-center row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-1" style="width: 90vw;">
+      <% for (let listing of listings) { %>
+        <div class="listing-card col" style="width: 20rem;">
+          <a href="/listing/<%= listing._id %>/view">
+            <img src="<%= listing.image.url %>" class="card-img-top" alt="listing image">
+          </a>
+          <div class="card-body">
+            <div class="title">
+              <h5 class="card-title">
+                <a id="titleanchor" href="/listing/<%= listing._id %>/view"><%= listing.title %></a>
+              </h5>
+            </div>
+            <p class="card-text">₹ <%= listing.price.toLocaleString("en-IN") %>/night</p>
+            <a href="/listing/<%= listing._id %>/view" class="btn btn-primary">View More</a>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</div>

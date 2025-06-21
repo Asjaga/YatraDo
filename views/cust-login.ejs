@@ -1,0 +1,21 @@
+<% layout('../layout/boilerplate.ejs') -%>
+<div class="container d-flex justify-content-center">
+    <form method="post" class="col-12 col-md-8 col-lg-6 new needs-validation" novalidate action="/login/customer">
+        <h2>Customer Login Form</h2>
+        <div class="mb-3">
+            <label class="form-label" for="titleid">Username *</label>
+            <input placeholder="Enter Username" type="text" name="username" id="titleid" class="form-control" required >
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter Valid Username</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="desc-id">Password *</label>
+            <input name="password" class="form-control" id="desc-id" placeholder="Enter password" required type="password">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter Valid Password</div>
+        </div>
+        <button class="submitbtn">Submit</button>
+        <p class="d-flex justify-content-center align-items-center mt-3 fs-5">Not a customer?&nbsp; <a href="/signup/customer">Signup</a></p>
+
+    </form>
+</div>

@@ -1,0 +1,53 @@
+<% if(success.length){ %>
+  <div class="alert alert-success alert-dismissible fade show alert-center alert-animated" role="alert">
+      <h2 class="fs-5 m-0"><%= success[0] %></h2>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>
+
+<% if(error.length){ %>
+  <div class="alert alert-danger alert-dismissible fade show alert-center alert-animated" role="alert">
+      <h2 class="fs-5 m-0"><%= error[0] %></h2>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>
+
+<style>
+  .alert-animated {
+    position: fixed; /* 👈 Makes it overlay on top */
+    top: 20px;        /* 👈 Distance from top */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1055;    /* 👈 Above other elements */
+    width: auto;
+    max-width: 90vw;
+    animation: slideFadeIn 0.5s ease forwards, slideFadeOut 1s ease 2s forwards;
+  }
+
+  @keyframes slideFadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -20px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  @keyframes slideFadeOut {
+    to {
+      opacity: 0;
+      transform: translate(-50%, -10px);
+      pointer-events: none;
+    }
+  }
+</style>
+
+<script>
+  setTimeout(() => {
+    document.querySelectorAll('.alert-animated').forEach(alert => {
+      alert.remove();
+    });
+  }, 5000); // 5 seconds = 4s visible + 1s fade out
+</script>

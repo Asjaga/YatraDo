@@ -1,0 +1,41 @@
+.no-results-container {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+}
+
+.no-results-image {
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.no-results-container h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #343a40;
+}
+
+.no-results-container p {
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.browse-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #FF385C;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+.noresult{
+    margin-top: 7rem !important;
+}

@@ -1,0 +1,29 @@
+<% layout('../layout/boilerplate.ejs') -%>
+<%if(listings.length>0){ %>
+    <div class="container filter-listing ">
+        <div class="listings">
+        <h2 >Listings result of <%=query%></h2>
+        <div style="width: 90vw;" class="row d-flex align-items-center justify-content-center  row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
+            <% for(listing of listings){ %>
+                <div class="listing-card col" style="width: 20rem;">
+                    <a href="/listing/<%= listing._id%>/view"><img src="<%=listing.image.url%>" class="card-img-top" alt="listing image"> </a>
+                    <div class="card-body">
+                    <div class="title"><h5 class="card-title"> <a id="titleanchor" href="/listing/<%= listing._id%>/view"><%=listing.title%></a></h5></div>
+                        <p class="card-text">₹ <%= listing.price.toLocaleString("en-IN") %>/night</p>
+                        <a href="/listing/<%= listing._id%>/view" class="btn btn-primary">View More</a>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+<%} else { %>
+<section class="no-results-container noresult">
+  <img src="https://img.freepik.com/premium-vector/no-result-found-character-illustration_854078-638.jpg?w=2000" alt="No Results Illustration" class="no-results-image">
+  <h1>No Listings Found</h1>
+  <p>We couldn’t find any results for your choice Listing.</p>
+  <a href="/listings" class="browse-button" >Browse All Listings</a>
+</section>
+
+</style>
+<%}%>

@@ -1,0 +1,116 @@
+<% layout('../layout/boilerplate.ejs') -%>
+<script>
+  let token = "<%= process.env.TOKEN %>";
+  let listing = <%- JSON.stringify(listing) %>;
+</script>
+
+<div class="viewmargin mt-2 container">
+  <div class="listing-card-view viewform">
+    <h5 class="text-center mt-2 card-title viewtitle"><b><%= listing.title %></b></h5>
+    <img src="<%= listing.image.url %>" class="card-img-view viewimg" alt="image">
+
+    <div class="card-body">
+      <p class="card-text text-center viewsize">Owned by: <%= listing.owner.username %></p>
+      <p class="card-text viewdes"><%= listing.description %></p>
+    </div>
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item viewsize"><b>Price</b>: <%= listing.price %></li>
+      <li class="list-group-item viewsize"><b>Location</b>: <%= listing.location %></li>
+      <li class="list-group-item viewsize"><b>Country</b>: <%= listing.country %></li>
+      <li class="list-group-item viewsize"><b>Category</b>: <%= listing.category %></li>
+    </ul>
+
+    <% if (currUser && currUser.role === "owner" && currUser._id.equals(listing.owner._id)) { %>
+      <div class="card-body viewbtn">
+        <form method="get" action="/listing/<%= listing._id %>/edit">
+          <button class="btn btns btn-primary">Edit</button>
+        </form>
+        <form method="post" action="/listing/<%= listing._id %>?_method=DELETE">
+          <button class="btns dltbtn btn-danger">Delete</button>
+        </form>
+      </div>
+      <style>
+            .listing-card-view {
+                height: 92vh;
+            }
+
+            @media (max-width: 991.98px) {
+                .viewform {
+                    height: 77vh !important;
+                }
+            }
+      </style>
+    <% } %>
+
+  </div>
+
+    <% if (!currUser || currUser.role !== "owner") { %>
+      <form class="booking d-flex justify-content-center align-items-center flex-column" method="get" action="/booking/<%= listing._id %>">
+        <button class="btn bookbtn mt-2">Book Now</button>
+      </form>
+    <% } else{ %>
+      <form class="booking d-flex justify-content-center align-items-center flex-column" method="get" action="/booking/<%= listing._id %>">
+        <button hidden class="btn bookbtn mt-2">Book Now</button>
+      </form>       
+    <% } %>
+
+  <% if (currUser) { %>
+    <hr>
+    <div class="reviewinput d-flex flex-column justify-content-center">
+      <h3>Leave us a Review</h3>
+      <form class="needs-validation" novalidate method="POST" action="/listing/<%= listing._id %>/review">
+        <fieldset class="starability-slot">
+          <legend>Rating:</legend>
+          <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="1" checked />
+          <input type="radio" id="first-rate1" name="rating" value="1" /><label for="first-rate1" title="Terrible">1 star</label>
+          <input type="radio" id="first-rate2" name="rating" value="2" /><label for="first-rate2" title="Not good">2 stars</label>
+          <input type="radio" id="first-rate3" name="rating" value="3" /><label for="first-rate3" title="Average">3 stars</label>
+          <input type="radio" id="first-rate4" name="rating" value="4" /><label for="first-rate4" title="Very good">4 stars</label>
+          <input type="radio" id="first-rate5" name="rating" value="5" /><label for="first-rate5" title="Amazing">5 stars</label>
+        </fieldset>
+
+        <div class="mt-2">
+          <label class="form-label fs-4">Comment</label>
+          <textarea name="comment" placeholder="Enter Reviews" cols="70" rows="5" required minlength="100" maxlength="230" class="form-control"></textarea>
+          <div class="invalid-feedback">Minimum 100 characters</div>
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <button class="btn mt-3">Submit</button>
+      </form>
+    </div>
+  <% } %>
+
+  <% if (listing.reviews.length > 0) { %>
+    <hr>
+    <div class="reviewinput flex-column">
+      <h4>All Reviews</h4>
+      <div class="mt-4 reviews-show justify-content-center d-flex row col-md-8 col-sm col-md">
+        <% for (review of listing.reviews) { %>
+          <div class="reviewcard ms-3 me-3 mb-3">
+            <div class="card-body">
+              <h5 class="card-title">@<%= review.author.username %> <span class="badge" style="color:black; background-color: #F5BD23;"><%= review.rating %> &#9733;</span></h5>
+              <p class="card-text"><%= review.comment %></p>
+              <% if (currUser && currUser._id.equals(review.author._id)) { %>
+                <form method="post" action="/listing/<%= listing._id %>/review/<%= review._id %>?_method=DELETE">
+                  <button class="dltbtn mb-2">Delete</button>
+                </form>
+              <% } %>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  <% } %>
+
+  <hr>
+  <div class="mapbox">
+    <h3>Where we will be</h3>
+    <div id="map"></div>
+  </div>
+</div>
+
+<script src="/js/map.js"></script>
+
+

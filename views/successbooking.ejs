@@ -1,0 +1,89 @@
+<% layout('../layout/boilerplate.ejs') -%>
+<div class="booking-msg ">
+<div class="card-booking margin-book">
+    <div id="circle">
+        <i class="checkmark">✓</i>
+    </div>
+    <h1 id="Success">Success</h1> 
+    <p id="bookmsg">We received your Booking request;<br/> Booking is <%=new_booking.status%> !</p>
+    <a href="/mybooking" class="btn mt-4">My Booking</a>
+</div>
+</div>
+ <style>
+      .booking-msg {
+        text-align: center;
+        padding: 40px 0;
+      }
+        #Success {
+          color: #88B04B;
+          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+          font-weight: 900;
+          font-size: 40px;
+          margin-bottom: 10px;
+        }
+        #bookmsg {
+          color: #404F5E;
+          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+          font-size:20px;
+          margin: 0;
+        }
+
+      .checkmark {
+        color: #9ABC66;
+        font-size: 100px;
+        line-height: 200px;
+        margin-left:-15px;
+      }
+      .card-booking {
+        background: white;
+        padding: 60px 12px 60px 12px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 1px 6px black;
+        display: inline-block;
+        border-radius: 1rem;
+        width: 24rem;
+        height: 30rem;
+        margin: 0 auto;
+      }
+      .margin-book{
+        margin-top: 7rem;
+      }
+
+      #circle{
+        border-radius:50%; 
+        height:200px; width:200px; 
+        background: #F8FAF5; 
+        margin:0 auto;
+      }
+
+
+      @media (max-width: 991.98px) {
+
+        .card-booking {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 25rem;
+        width: 20rem;
+        }
+      .checkmark {
+        color: #9ABC66;
+        font-size: 50px;
+        line-height: 130px;
+      }
+      .margin-book{
+        margin-top: 0rem;
+      }
+      #circle{
+        border-radius: 50%;
+        height: 130px;
+        width: 130px;
+      }
+        
+}
+    </style>
+

@@ -1,0 +1,61 @@
+<% layout('../layout/boilerplate.ejs') -%>
+<script>let price = <%= listing.price %> </script>
+<div class="container d-flex justify-content-center">
+    <form method="post" class="col-12 col-md-8 col-lg-6 new needs-validation" novalidate action="/booking/<%=listing._id%>">
+        <h2> Booking Place</h2>
+        <div class="mb-3">
+            <label class="form-label" for="titleid">Name *</label>
+            <input placeholder="Enter Name" type="text" name="name" id="titleid" class="form-control" value="<%=user.name %>" required >
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter Valid Name</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="desc-id">Email *</label>
+            <input name="email" class="form-control" id="desc-id" placeholder="Enter Email" value="<%=user.email %>" required type="email" >
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter Valid Email</div>
+        </div>
+
+        <div class="mt-2">
+            
+        </div>
+        <div class="date row">
+            <div class="from col-md">
+            <label> From date *</label>
+            <input type="date" class="form-control" id="fromdate" required name="from_date">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter Valid From Date</div>
+            </div>
+            <div class="to col-md">
+            <label> To date *</label> 
+            <input type="date" id="todate" class="form-control " required name="to_date">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter Valid To Date</div>
+            </div>
+            <div class="msg col-md">
+            <label class="text-center">Days</label>
+            <p id="dayCount" class="form-control" style="font-weight: bold;">Total Days:</p>
+            </div>
+        </div>
+        <div class="mb-3"> 
+          <label class="form-label" >Room *</label>
+          <select class="form-select" id="no-of-rooms" name="rooms" aria-label="Default select example"  required >
+              <option value="1" selected>1 Room</option>
+              <option value="2">2 Room</option>
+              <option value="3">3 Room</option>
+              <option value="4">4 Room</option>
+              <option value="5">5 Room</option> 
+          </select>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Select Valid Room</div>
+        </div>
+            <div class="form-group mt-2">
+                <label><strong>Your Price:</strong></label>
+                <p id="totalPrice" class="text-success fs-5 mb-0">₹<%=listing.price %></p>
+            </div>
+        <button class="submitbtn ">Submit</button>
+    </form>
+</div>
+<script src="/js/booking.js"></script>
+
+

@@ -1,0 +1,685 @@
+.navbar{
+    height: 5rem;
+    display: flex;
+    justify-content: space- !important;
+}
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-link{
+    font-size: 1.3rem;
+    color: #222222;
+}
+.navbar-brand{
+    font-size: 2rem;
+    color: #FF385C !important;
+}
+.navbar-brand:hover , .navbar-brand:active{
+    font-size: 2rem;
+    color: #FF385C;
+}
+.listing-card-view{
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding: 0 1rem 0 1rem;
+    width: 28rem !important;
+    height: 82vh;
+    box-shadow: 0px 1px 2px 1px black;
+    border-radius: 1rem;
+    text-align: start;
+    border: 0.2px solid black;
+}
+.listing-card-bookview{
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding: 0 1rem 0 1rem;
+    width: 30rem !important;
+    height: 85vh;
+    box-shadow: 0px 1px 2px 1px black;
+    border-radius: 1rem;
+    text-align: start;
+    border: 0.2px solid black;
+}
+
+.card-img-view{
+    height: 19rem !important;
+    width: 100% !important;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+.card-img-bookview{
+    height: 18rem !important;
+    width: 100% !important;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+.listing-card{
+    /* margin-bottom: 2rem;
+    margin-top: 2rem; */
+    margin: 2rem 0.8rem 2rem 0.8rem ;
+    padding: 0;
+    width: 22rem;
+    box-shadow: 0px 1px 8px  black;
+    border-radius: 1rem;
+    text-align: center;
+    height: 25.5rem;
+    border: 0.2px solid black;
+}
+.listing-card-hostbook{
+    margin: 2rem 0.8rem 2rem 0.8rem ;
+    margin-bottom: 2rem;
+    margin-top : 2rem;
+    padding: 0;
+    width: 22rem;
+    box-shadow: 0px 1px 8px  black;
+    border-radius: 1rem;
+    text-align: center;
+    height: 25.5rem;
+    border: 0.2px solid black;
+}
+
+.card-img-top{
+    height: 16rem;
+    width: 100% !important;
+    border-radius: 1rem 1rem 0 0 ;
+    object-fit: cover;
+}
+.card-img{
+    height: 25rem !important;
+    width: 100% !important;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+.card-img-top:hover{
+    opacity: 80%;
+}
+.viewform{
+    margin-top:4rem ;
+}
+.card-body{
+    padding: 0 !important;
+    margin-top: 0.5rem;
+}
+.title{
+    height: 3.5rem;
+}
+
+.new h2{
+    text-align: center;
+}
+
+#titleanchor{
+    text-decoration: none;
+    color: #222222;
+}
+.new button{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    width: 7rem;
+    height: 3rem;
+    font-size: 1.8rem;
+    align-items: center;
+    background-color: #FF385C;
+    justify-content: center;
+}
+
+.new button:hover{
+    background-color: #FF385C;
+}
+.new button:active{
+    background-color: #FF385C;
+}
+.form-control,.form-select{
+    font-size: 1rem;
+    border: 2px solid black;
+}
+.new{
+    margin-top: 5rem !important;
+}
+.viewimg{
+    height: 26rem;
+}
+
+.viewbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.viewsize{
+    font-size: 1.2rem;
+}
+.viewtitle{
+    height: 3.5rem;
+}
+.viewdes{
+    height: 4.5rem;
+}
+.btn{
+    border:none;
+    background-color: #FF385C;
+    color: white;
+}
+.bookbtn{
+    width: 15rem;
+    font-size: 1.2rem;
+}
+.btn:hover{
+    background-color: #FF385C !important;
+}
+.btn:active{
+    background-color: #FF385C !important;
+}
+.btns{
+    height: 2.5rem;
+    width: 5rem !important;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submitbtn {
+    background-color: #FF385C;
+    color: white;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem !important;
+    width: auto !important;
+    border: none;
+    height: auto !important;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left:2rem ; 
+    padding-right:2rem ; 
+    font-size: 1.4rem;
+    height: 5rem;
+    background-color: #F8F9FA;
+}
+.social i{
+    font-size: 2rem;
+    margin-left: 1.3rem;
+    margin-right: 1.3rem;
+}
+
+.left a{
+    margin-right:1.3rem ;
+    text-decoration: none;
+    color: black;
+}
+.listings{
+    margin-top: 2rem !important;
+}
+.listings h2{
+    text-align: center;
+
+}
+/* .main{
+     flex: 1;
+} */
+
+.alert{
+    margin-top: 6rem  !important;
+    text-align: center;
+}
+.back{
+    width: 8rem;
+}
+
+.reviewinput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid black; */
+}
+
+.reviewcard{
+    text-align: center;
+    border: 1px solid grey;
+    width: 30rem !important;
+    height: 12rem;
+    box-shadow: 0px 0px 2px 0.2px;
+    border-radius: 0.8rem;
+}
+
+.card{
+    width: 20rem !important;
+    height: 17rem;
+}
+.card-text{
+    /* text-align: center !important; */
+}
+
+.alert-center {
+  width: fit-content;
+  max-width: 90%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+body { margin: 0; padding: 0; }
+#map { 
+    height: 500px; 
+    width: 95vh; 
+    border: 2px dashed black;
+    border-radius: 1rem;
+}
+.mapbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dltbtn{
+    background-color: black;
+    color: white;
+    border-radius: 0.4rem;
+}
+
+.search-box button{
+    border: 0 !important;
+    border-radius: 50%;
+    height: 2.2rem;
+    width : 2.2rem;
+    background-color: #FF385C;
+    align-items: center;
+    line-height: 1.8rem;
+    color: white;
+}
+.search-box input{
+    width: 28rem !important;
+    margin: 0 !important;
+    outline: none;
+    height: 2rem;
+    border: none;
+    color: black;
+}
+.search-box{
+    box-sizing: border-box;
+    border: 1px solid black;
+    width: 30rem !important;
+    display: flex;
+    gap: 0.2rem;
+    height: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+.search-box:hover,.search-box:active{
+    box-shadow: 0px 1px 3px 0.2px  black;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+}
+.icons{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    border-radius: 2rem;
+}
+.filters{
+    margin-top:6rem !important;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 3.2rem 0 3.2rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    background-color: white;  /* very light pink */
+    color: black;     
+    border-radius: 2rem;
+    border: 0.02px solid grey;
+    height: 5rem;
+    box-shadow: 0px 1px 3px black;
+
+}
+.filters:active,.filters:hover{
+    box-shadow: 0;
+}
+
+.filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    opacity: 70%;
+}
+.filter:hover,.filter:active{
+    opacity: 100%;
+}
+.filter i {
+    font-size: 1.8rem;
+}
+
+.container {
+  max-width: 90vw;
+  margin: 0 auto 0 auto;  /* ✅ This horizontally centers the container */
+  padding: 0 1rem; 
+  display: flex;
+  justify-content: center !important;
+  flex-direction: column !important;
+  align-items: center;
+}
+.filter-option{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 70%;
+}
+.filter-option:active,.filter-option:hover{
+    opacity: 100%;
+    cursor: pointer;
+}
+.filter-option i {
+    font-size: 2rem;
+}
+
+.icons a{
+    color: black;
+    text-decoration: none;
+}
+
+.filter-listing{
+    margin-top: 7rem !important;
+}
+
+
+.margin{
+    margin-top: 4rem;
+}
+
+.booklisting{
+    display: flex;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+}
+
+.leftsidenav{
+    width: 24vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 3rem;
+}
+.rightsidenav{
+    width: 24vw;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    height: 3rem;
+}
+
+.reviews-show{
+    width: 68vw;
+}
+
+.list-group-item{
+    text-align: start;
+}
+.togglelist{
+
+    color: #ff6b6b ;
+}
+
+.togglelist {
+  text-decoration: none !important;
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.togglelist:hover {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+.offcanvas{
+    width: 20vw !important;
+}
+
+.nav-btn{
+    border-radius: 1rem;
+    margin: 0 0.5rem 0 0.5rem;
+}
+.nav-btn:active,.nav-btn:hover{
+    box-shadow: 0px 0px 3px;
+}
+
+.navbar-brand-center{
+    display: none;
+}
+main {
+  flex: 1 0 auto;
+}
+
+
+@media (max-width: 991.98px) {
+  /* ✅ Collapse navbar style fix */
+  .navbar {
+    flex-wrap: wrap !important;
+    position: relative;
+    
+  }
+
+  .navbar-collapse {
+    height: 25vh;
+    background-color: white !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 1rem;
+    width: 100% !important;
+    gap: 0.7rem;
+    z-index: 1000;
+  }
+
+  .navbar-nav {
+    flex-direction: column !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    margin: 0 !important;
+  }
+
+  .nav-link,
+  .nav-btn {
+    display: block;
+    width: 100%;
+    text-align: left !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  /* ✅ Hide search box */
+  .search-box {
+    display: none !important;
+  }
+
+  /* ✅ Fix left/right nav alignment */
+  .leftsidenav,
+  .rightsidenav {
+    width: 100% !important;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  /* .rightsidenav{
+    margin-top: 1.8rem !important;
+  } */
+
+  .leftsidenav{
+    margin-bottom: 3rem !important;
+  }
+
+
+  /* ✅ Scrollable filters & icons */
+  .filters {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding: 0 1rem;
+    height: auto;
+    width: 80vw;
+    justify-self: center;
+    margin: 1rem 0;
+    margin-top: 0 !important;
+  }
+
+  .icons {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 0.3rem;
+  }
+
+  .icons::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter {
+    flex: 0 0 auto;
+    min-width: 6rem;
+    scroll-snap-align: start;
+    font-size: 1.2rem;
+  }
+  .collapse{
+    row-gap: 2rem;
+  }
+
+  .filter-option {
+    display: none;
+  }
+
+  .navbar-brand{
+    display: none;
+  }
+  .navbar-brand-center{
+    display: block;
+    font-size: 2rem;
+ }
+ #nav-center{
+    color: #FF385C !important;
+    text-decoration: none;
+ }
+
+ .margin{
+    margin-top: 2rem;
+ }
+
+ .booking{
+    justify-self:center !important ;
+ }
+
+
+ /* ✅ Footer responsive layout for small screens */
+.footer {
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1rem;
+  padding: 1rem 2rem !important;
+  text-align: center;
+  width: 100% !important;
+  height: 22vh;
+}
+
+.privacy-body , .profile-section ,.company{
+    width: 90vw !important;
+    margin-top: 0 !important;
+}
+
+.footer .left a {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.footer .social {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.viewform{
+   width: 90vw !important; 
+   height: 70vh !important;
+}
+#map{
+    width: 90vw;
+    height:30vh ;
+}
+.viewtitle{
+    margin: 0;
+}
+.viewimg{
+    margin-top: 0rem !important;
+    height: 25vh !important;
+}
+
+.bookbtn{
+    width: 90vw !important;
+    font-size: 1.5rem;
+}
+.reviewinput{
+    width: 90vw;
+    justify-self: center;
+}
+.reviews-show{
+    width: 90vw;
+    justify-content: center !important;
+    align-items: center !important;
+}
+.reviewcard{
+    width: 90vw !important;
+}
+.viewmargin{
+    margin-top: 0 !important;
+}
+.offcanvas{
+    width: 50vw !important;
+}
+
+.margin{
+    margin-top: 0 !important;
+}
+.card-text{
+    padding: 0 !important;
+    font-size: 0.9rem;
+}
+
+
+.clbtn{
+    width: auto !important;
+}
+.card-title{
+    font-size: 1rem;
+}
+.bookform{
+    height: 81vh !important;
+}
+.hostform{
+    height: 76vh !important;
+}
+
+}
+
+
+
+
+

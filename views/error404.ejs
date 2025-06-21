@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 - Not Found</title>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Varela Round', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .main {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .main h1 {
+      font-size: 100px;
+      color: #f53672;
+      margin-bottom: 10px;
+    }
+
+    .main p {
+      font-size: 20px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .main button {
+      padding: 10px 25px;
+      background-color: #f53672;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .main button:hover {
+      background-color: #d1225f;
+    }
+
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: #f53672;
+      opacity: 0.25;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .bubble:nth-child(1) {
+      width: 120px;
+      height: 120px;
+      top: 10%;
+      left: 15%;
+      animation-delay: 0s;
+    }
+
+    .bubble:nth-child(2) {
+      width: 60px;
+      height: 60px;
+      top: 30%;
+      left: 55%;
+      animation-delay: 1s;
+    }
+
+    .bubble:nth-child(3) {
+      width: 90px;
+      height: 90px;
+      top: 70%;
+      right: 20%;
+      animation-delay: 2s;
+    }
+
+    .bubble:nth-child(4) {
+      width: 100px;
+      height: 100px;
+      top: 40%;
+      right: 10%;
+      animation-delay: 3s;
+    }
+
+    .bubble:nth-child(5) {
+      width: 140px;
+      height: 140px;
+      bottom: 10%;
+      left: 25%;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Only 5 Floating Bubbles -->
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+
+  <!-- 404 Message Section -->
+<div class="main">
+  <h1>404</h1>
+  <p>Oops! The page you're looking for can't be found.<br/>Maybe try going back or check the URL?</p>
+  <button onclick="history.back()">GO BACK</button>
+</div>
+</body>
+</html>

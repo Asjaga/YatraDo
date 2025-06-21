@@ -1,0 +1,31 @@
+<% layout('../layout/boilerplate.ejs') -%>
+<div class="container d-flex justify-content-center">
+    <form method="post" class="col-12 col-md-8 col-lg-6 new needs-validation" novalidate action="/profile/edit">
+        <h2> Edit your Profile</h2>
+        <div class="mb-3">
+            <label class="form-label" for="titleid">Username *</label>
+            <input placeholder="Enter Username" type="text" name="username" id="titleid" class="form-control" value="<%=user.username %>" required >
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter Valid Username</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="titleid">Name *</label>
+            <input placeholder="Enter Name" type="text" name="name" id="titleid" class="form-control" value="<%=user.name %>" required >
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter Valid Name</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="desc-id">Email *</label>
+            <input name="email" class="form-control" id="desc-id" placeholder="Enter Email" value="<%=user.email %>" required type="email" >
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter Valid Email</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="desc-id">Password *</label>
+            <input name="password" type="password" class="form-control" id="desc-id" placeholder="Enter password" required >
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter Valid Password</div>
+        </div>
+        <button class="btn btn-success">Submit</button>
+    </form>
+</div>

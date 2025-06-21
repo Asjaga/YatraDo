@@ -1,0 +1,71 @@
+<% layout('../layout/boilerplate.ejs') -%>
+<div class=" mt-2 container viewmargin">
+    <div class="listing-card-bookview viewform bookform" >
+        <div class="viewtitle"> <h5 class="text-center mt-3 card-title"><b><%= booking.listing.title %></b></h5></div>
+                    <div class="image-wrapper position-relative">
+                        <img src="<%= booking.listing.image.url %>" class="card-img-bookview viewimg" alt="listing image">
+                        <div class="booking-overlay">Booking is <%= booking.status  %></div>
+                    </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item viewsize"><b>Name</b> : <%= currUser.name %></li>
+            <li class="list-group-item viewsize"><b>Date</b> : <%= booking.date %> (<%= booking.totalDays %> Days)</li>
+            <li class="list-group-item viewsize"><b>Total Room</b>: &nbsp;<%= booking.totalRoom %></li>
+            <li class="list-group-item viewsize"><b>Location</b>: &nbsp;<%= booking.listing.location %></li>
+             <% if(booking.status === "Processing") {%>
+                    <li class="list-group-item viewsize"><b>Booking Status </b> : <span style="color: orange;">Under Processing </li>
+            <% } else if(booking.status === "Cancelled"){%>
+                    <li class="list-group-item viewsize"><b>Booking Status </b> : <span style="color: red;">Cancelled </li>
+            <%}else{%>
+                    <li class="list-group-item viewsize"><b>Booking Status </b> : <span style="color: green;">Confirmed ✓</li>
+            <% } %>    
+            <li class="list-group-item viewsize"><b>Total Amount </b> : ₹<%= booking.totalAmount.toLocaleString("en-IN")  %></li>
+        </ul>
+        
+        <div class="card-body viewbtn">
+        <% if(booking.status !== "Cancelled"){ %>
+        <form method="post" action="/mybooking/<%=booking._id%>">
+            <button class=" btns clbtn btn-danger">Cancel Booking</button>
+        </form>
+        <% } else{ %>
+            <form method="post" action="/mybooking/<%=booking._id%>?_method=DELETE">
+                <button class=" btns clbtn btn-danger">Delete</button>
+            </form>
+        <% } %>
+        </div>
+    </div>
+</div>
+
+
+<script>
+  function confirmCancel() {
+    return confirm("Are you sure you want to cancel this booking?");
+  }
+</script>
+
+<style>
+
+    .image-wrapper {
+    position: relative;
+}
+
+.clbtn{
+    background-color: black;
+    color: white;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    width: auto !important;
+}
+
+.booking-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: black ;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 2;
+}
+</style>

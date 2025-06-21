@@ -1,0 +1,32 @@
+<% layout('../layout/boilerplate.ejs') -%>
+<div class="container d-flex justify-content-center">
+    <form method="post" class="col-12 col-md-8 col-lg-6 new needs-validation" novalidate action="/signup">
+        <h2> Host Signup Form</h2>
+        <div class="mb-3">
+            <label class="form-label" for="titleid">Username *</label>
+            <input placeholder="Enter Username" type="text" name="username" id="titleid" class="form-control" required >
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter Valid Username</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="titleid">Name *</label>
+            <input placeholder="Enter Name" type="text" name="name" id="titleid" class="form-control" required >
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter Valid Name</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="desc-id">Email *</label>
+            <input name="email" class="form-control" id="desc-id" placeholder="Enter Email" required type="email" >
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter Valid Email</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="desc-id">Password *</label>
+            <input name="password" type="password" class="form-control" id="desc-id" placeholder="Enter password" required >
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Enter Valid Password</div>
+        </div>
+        <button class="submitbtn">Submit</button>
+         <p class="d-flex justify-content-center align-items-center mt-3 fs-5">Already a host account ?&nbsp;<a href="/login">Signin</a></p>
+    </form>
+</div>
