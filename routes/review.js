@@ -10,6 +10,6 @@ const controller = require("../controller/reviews.js");
 router.post("/", isLoggedIn, validateReview, wrapAsync(controller.createReview));
 
 // Delete review
-router.delete("/:reviewId", isLoggedIn,requireHost, isAuthor, wrapAsync(controller.deleteReview));
+router.delete("/:reviewId", isLoggedIn, isAuthor, wrapAsync(controller.deleteReview));
 
 module.exports = router;
