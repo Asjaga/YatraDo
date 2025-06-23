@@ -468,6 +468,12 @@ main {
   flex: 1 0 auto;
 }
 
+.viewbtn{
+    max-width:fit-content;
+    justify-self: center !important;
+}
+
+
 
 @media (max-width: 991.98px) {
   /* ✅ Collapse navbar style fix */
@@ -478,7 +484,7 @@ main {
   }
 
   .navbar-collapse {
-    height: 25vh;
+    height: 28vh;
     background-color: white !important;
     flex-direction: column !important;
     align-items: stretch !important;
@@ -677,9 +683,64 @@ main {
     height: 76vh !important;
 }
 
+
 }
 
 
+@media (max-height: 825px) {
+  .listing-card-view,
+  .listing-card-bookview,
+  .listing-card-hostbook,
+  .bookform,
+  .hostform {
+    max-height: 85vh !important;
+    height: auto !important;
+    overflow-y: auto !important;
+    padding: 1rem !important;
+  }
 
+  .viewform {
+    height: auto !important;
+    max-height: 75vh !important;
+    overflow-y: auto !important;
+  }
 
+  .card-img,
+  .card-img-view,
+  .card-img-bookview {
+    max-height: 30vh;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
 
+  .card-body {
+    font-size: 0.95rem;
+    padding: 0.5rem;
+  }
+
+  .viewtitle,
+  .viewdes {
+    height: auto !important;
+  }
+
+  .price,
+  .location {
+    font-size: 1rem;
+  }
+
+  .listing-card-view p {
+    margin-bottom: 0.6rem;
+  }
+
+  .reviewcard {
+    width: 30vw !important;
+    /* flex-direction:row; */
+  }
+
+  .card-title,
+  .card-text {
+    font-size: 1rem !important;
+    text-align: center;
+  }
+}

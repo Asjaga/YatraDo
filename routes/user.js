@@ -56,7 +56,6 @@ router.post("/profile/edit",async(req,res)=>{
 router.get("/mylistings",async(req,res)=>{
   let id = req.user._id;
   let listings = await Listing.find({owner:id});
-  console.log(listings);
   res.render("mylisting.ejs",{listings});
 })
 
