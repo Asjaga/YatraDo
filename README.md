@@ -31,7 +31,7 @@ _Transforming Journeys Into Seamless Adventures_
 - [Installation](#installation)
 - [Usage](#usage)
 - [Folder Structure](#folder-structure)
-- [License](#license)
+
 
 ---
 
