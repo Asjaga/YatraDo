@@ -35,9 +35,9 @@
   <div class="listings">
     <h2>All Listings</h2>
 
-    <div class="row d-flex align-items-center cards justify-content-center row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-1" style="width: 90vw;">
+    <div class="row d-flex align-items-center cards justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-4" style="width: 90vw;">
       <% for (let listing of listings) { %>
-        <div class="listing-card col" style="width: 20rem;">
+        <div class="listing-card col" style="width: 20vw;">
           <a href="/listing/<%= listing._id %>/view">
             <img src="<%= listing.image.url %>" class="card-img-top" alt="listing image">
           </a>

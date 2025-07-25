@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router({ mergeParams: true });
 const passport = require("passport");
-const { isLoggedIn,validateUser, saveRedirectUrl } = require("../middleware.js");
+const { isLoggedIn,validateUser,requireHost, saveRedirectUrl } = require("../middleware.js");
 const wrapAsync = require("../utils/wrapAsync.js"); // For async error handling
 const controller = require("../controller/users.js");
 const User = require("../models/user.js")
@@ -27,14 +27,14 @@ router.post("/login", saveRedirectUrl, controller.login)
 // Handle logout
 router.get("/logout", isLoggedIn, controller.logout);
 
-router.get("/profile",async(req,res)=>{
+router.get("/profile",isLoggedIn,async(req,res)=>{
   let id = req.user._id;
   let user= await User.findById(id);
   res.render("profile.ejs",{user});
 })
 
 
-router.post("/profile/edit",async(req,res)=>{
+router.post("/profile/edit",isLoggedIn,async(req,res)=>{
    let {username,email,name,password} = req.body;
     let id = req.user._id;
     let user = await User.findById(id);
@@ -53,7 +53,7 @@ router.post("/profile/edit",async(req,res)=>{
 });
 
 
-router.get("/mylistings",async(req,res)=>{
+router.get("/mylistings",isLoggedIn,requireHost,async(req,res)=>{
   let id = req.user._id;
   let listings = await Listing.find({owner:id});
   res.render("mylisting.ejs",{listings});

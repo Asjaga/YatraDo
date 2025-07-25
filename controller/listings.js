@@ -1,4 +1,5 @@
 const Listing = require("../models/listing.js");
+const Booking = require("../models/booking.js");
 let mapToken = process.env.TOKEN;
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
@@ -67,11 +68,24 @@ module.exports.updateListing = async (req, res) => {
 }
 
 module.exports.deleteListing = async (req, res) => {
-  let { id } = req.params;
-  await Listing.findByIdAndDelete(id);
-  req.flash("success", "Listing deleted successfully!");
-  res.redirect("/listings");
+  const { id } = req.params;
+
+  try {
+    // First, delete all bookings related to this listing
+    await Booking.deleteMany({ listing: mongoose.Types.ObjectId(id) });
+
+    // Then, delete the listing
+    await Listing.findByIdAndDelete(id);
+
+    req.flash("success", "Listing and related bookings deleted successfully!");
+    res.redirect("/listings");
+  } catch (err) {
+    console.error("Error while deleting listing and bookings:", err);
+    req.flash("error", "Something went wrong. Try again.");
+    res.redirect("/listings");
+  }
 };
+
 
 
 
