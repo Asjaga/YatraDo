@@ -2,6 +2,11 @@
 
 YatraDo is a full-stack web application designed for discovering, listing, and booking accommodations. It serves as a platform connecting property owners (hosts) with travelers (customers), offering a seamless experience from browsing to booking. The application features user authentication, property management, a booking system, reviews, and interactive maps.
 
+# Demo Preview
+![Uploading Screenshot 2025-06-17 233054.png…]()
+
+![Uploading Screenshot 2025-06-23 220838.png…]()
+
 ## Key Features
 
 *   **Dual User Roles:** Separate authentication and dashboards for **Customers** (travelers) and **Owners** (hosts).
@@ -71,13 +76,7 @@ To get a local copy up and running, follow these simple steps.
     TOKEN=<your_mapbox_access_token>
     ```
 
-5.  **(Optional) Initialize the Database:**
-    To populate the database with sample listings and reviews, you can run the initialization script:
-    ```sh
-    node init/index.js
-    ```
-
-6.  **Start the server:**
+5.  **Start the server:**
     ```sh
     node app.js
     ```
